@@ -181,13 +181,13 @@
             <div class="col-sm-6 col-lg-4 col-xl-3">
               <!-- Product-->
               <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                <div class="product-figure"><img src="images/product-1.png" alt="" width="161" height="162"/>
+                <div class="product-figure"><img src="images/product-1.png" alt="" width="161" height="162" id="myImg"/>
                 </div>
                 <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
                 </div>
                 <h6 class="product-title">Aguachile de Camarón con tamarindo y Mango</h6>
                 <div class="product-button">
-                  <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Ver Producto</a></div>
+                  <div class="button-wrap"><button class="button button-xs button-primary button-winona" id="prueba">Ver Producto</button></div>
                 </div>
               </article>
             </div>
@@ -425,11 +425,38 @@
         </div>
       </section>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal" style="z-index: 1000000000;">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    document.getElementById("prueba").onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+    </script>
     <!-- coded by Himic-->
   </body>
 </html>
